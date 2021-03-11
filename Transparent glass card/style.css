@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Shippori+Mincho+B1:wght@700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    overflow: hidden;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1c20;
+}
+section::before
+{
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: 40%;
+    width: 600px;
+    height:600px;
+    background:linear-gradient(to right, #780206, #061161);
+    border-radius: 50%;
+}
+
+.card{
+    position: relative;
+    width: 508px;
+    height: 314px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.card .face{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ box-shadow: 0 15px 15px rgba(0, 0 , 0, 0.5);
+ border-radius: 15px;
+ background: rgba(255, 255, 255, 0.05) url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+ backdrop-filter: blur(10px);
+ transform-style: preserve-3d;
+ transition: 1s;
+ backface-visibility: hidden;
+}
+
+/* .card .face.front::after{
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    width:60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+} */
+
+.card .face.front .logo{
+   position: absolute;
+   bottom: 70%;
+   text-align: center;
+   color: #fff;
+   width: 100%;
+}
+
+.card .face.front .logo::after{
+     content: "";
+     position: absolute;
+     bottom: 0.01 rem;
+     left:220px;
+     width: 10px;
+     height: 5px;
+     background: rgb(252, 227, 0);
+}
+
+
+.card .face.front .name {
+    
+    position: absolute;
+   bottom: 50%;
+   text-align: center;
+   color: #fff;
+   letter-spacing: 6px;
+   text-shadow: 0 2px 1px #0005;
+   width: 100%;
+   font-family: 'Shippori Mincho B1', serif;
+ }
+
+ .card .face.front .slogan{
+    position: absolute;
+    bottom: 40%;
+    text-align: center;
+    color: rgb(252, 227, 0);
+    font-weight: 10;
+    font-size: 13px;
+    width: 100%;
+    text-shadow: 0 2px 1px #0005;
+    font-family: 'Shippori Mincho B1', serif;
+    
+}
+
+.card .face.back .number{
+    position: absolute;
+    text-align: center;
+    bottom: 60%;
+    color: #fff;
+    font-family: 'Shippori Mincho B1', serif;
+    letter-spacing: 9px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.card .face.back .email{
+    position: absolute;
+    text-align: center;
+    bottom: 50%;
+    color: rgb(252, 227, 0);
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 12px;
+    width: 100%;
+}
+
+.card .face.back .email .fas.fa-envelope{
+    position: absolute;
+    bottom: 2px;
+    left: 150px;
+}
+
+.card:hover .face.front{
+    transform: rotateY(180deg);
+}
+
+.card .face.back{
+    transform: rotateY(180deg);
+}
+
+.card:hover .face.back{
+    transform: rotateY(360deg);
+}
